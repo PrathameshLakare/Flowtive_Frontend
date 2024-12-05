@@ -41,9 +41,9 @@ const LoginForm = () => {
   return (
     <div className="container py-5">
       <div className="w-50 mx-auto ">
-        <div className="card shadow-sm my-3">
+        <div className="card shadow-lg my-3">
           <div className="card-body">
-            <h4 className="card-title text-center mb-4">Workasana Login</h4>
+            <h3 className="card-title text-center mb-4">Workasana Login</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="loginEmail" className="form-label">

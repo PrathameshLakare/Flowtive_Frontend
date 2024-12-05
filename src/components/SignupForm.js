@@ -29,9 +29,9 @@ const SignupForm = () => {
   return (
     <div className="container py-5">
       <div className="w-50 mx-auto">
-        <div className="card shadow-sm my-3">
+        <div className="card shadow-lg my-3">
           <div className="card-body">
-            <h4 className="card-title text-center mb-4">Workasana Signup</h4>
+            <h3 className="card-title text-center mb-4">Workasana Signup</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="loginName" className="form-label">
@@ -74,7 +74,7 @@ const SignupForm = () => {
               </div>
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
-                  Login
+                  Signup
                 </button>
               </div>
               {error && (
