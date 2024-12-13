@@ -42,7 +42,7 @@ const Dashboard = () => {
                 className="col-md-6 col-sm-6 col-lg-4 mb-4 d-flex justify-content-center"
               >
                 <Link
-                  to={`/projectManagement/${project._id}`}
+                  to={`/projectView/${project._id}`}
                   className="card bg-info-subtle link-underline link-underline-opacity-0 text-center bg-light border-0 shadow-sm rounded-3 w-100"
                   style={{ transition: "transform 0.2s" }}
                 >
