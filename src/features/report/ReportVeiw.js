@@ -10,7 +10,7 @@ const ReportView = () => {
   return (
     <div className="container">
       <div className="pb-3">
-        <h1 className="text-center display-4">Workasana Report</h1>
+        <h1 className="text-center display-4">Flowtive Report</h1>
         <h2 className="text-center">Report Overview</h2>
       </div>
       {status === "loading" && <p className="text-center my-2">Loading...</p>}

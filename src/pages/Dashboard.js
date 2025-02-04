@@ -26,7 +26,7 @@ const Dashboard = () => {
   return (
     <div className="container">
       <div className="text-center pb-3">
-        <h1 className="display-4">Workasana Dashboard</h1>
+        <h1 className="display-4">Flowtive Dashboard</h1>
         <h3>Welcome, {user?.name || "User"}</h3>
         {status === "loading" && <p>Loading...</p>}
       </div>

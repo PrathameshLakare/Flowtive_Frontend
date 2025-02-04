@@ -43,7 +43,7 @@ const LoginForm = () => {
       <div className="w-50 mx-auto ">
         <div className="card shadow-lg my-3">
           <div className="card-body">
-            <h3 className="card-title text-center mb-4">Workasana Login</h3>
+            <h3 className="card-title text-center mb-4">Flowtive Login</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="loginEmail" className="form-label">

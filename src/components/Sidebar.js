@@ -24,7 +24,7 @@ const Sidebar = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="staticBackdropLabel">
-                Workasana
+                Flowtive
               </h5>
               <button
                 type="button"
