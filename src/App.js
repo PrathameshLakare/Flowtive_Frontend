@@ -30,7 +30,7 @@ function App() {
                 to={"/dashboard"}
                 className="link-dark link-underline link-underline-opacity-0"
               >
-                Workasana
+                Flowtive
               </Link>
             </h4>
             <button
