@@ -1,70 +1,387 @@
-# Getting Started with Create React App
+# Flowtive
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern full-stack collaboration and productivity platform for teams and individuals.  
+Manage tasks, projects, teams, and tags; track progress, generate reports, and streamline your workflow—all in one place.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+[Try Flowtive Now](https://workasana-frontend.vercel.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛂 Guest Login
 
-### `npm test`
+- **Username:** `mine@example.com`
+- **Password:** `mine123`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚡ Quick Start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone https://github.com/PrathameshLakare/Flowtive_Frontend.git
+cd FlowtiveFrontend
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tech Stack
 
-### `npm run eject`
+- **Frontend:** React, Redux Toolkit, React Router, Bootstrap
+- **Backend:** Node.js, Express, MongoDB, JWT
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎥 Demo Video
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Watch a walkthrough of Flowtive’s features:  
+[Loom Video Link]()
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## ✨ Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Authentication:** Secure signup/login with JWT, protected routes, and user profile management.
+- **User Management:** View all users, manage your profile, and collaborate with team members.
+- **Teams:** Create and manage teams, assign users, and organize work by teams.
+- **Projects:** Create and manage projects, assign them to teams, and track project progress.
+- **Tags:** Create and assign tags to tasks for better organization and filtering.
+- **Tasks:**
+  - Create, edit, update, and delete tasks.
+  - Assign tasks to projects, teams, and multiple owners.
+  - Add tags, set status (To Do, Completed, etc.), and estimate time to complete.
+  - Filter tasks by tags, status, owners, project, or team.
+- **Reports:**
+  - View tasks completed in the last week.
+  - Get total pending work in days.
+  - Analyze closed tasks grouped by team, owners, or project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Authentication**
 
-### Analyzing the Bundle Size
+#### **POST /auth/signup**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Register a new user  
+**Request Body:**
 
-### Making a Progressive Web App
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Response:**
 
-### Advanced Configuration
+```json
+{
+  "message": "User registered successfully",
+  "token": "jwt_token_here"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### **POST /auth/login**
 
-### Deployment
+Login user  
+**Request Body:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```json
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
 
-### `npm run build` fails to minify
+**Response:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{
+  "message": "User login successful.",
+  "token": "jwt_token_here"
+}
+```
+
+---
+
+#### **GET /auth/me**
+
+Get current user profile (requires JWT in `Authorization` header)  
+**Response:**
+
+```json
+{
+  "user": {
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+}
+```
+
+---
+
+### **Users**
+
+#### **GET /users**
+
+List all users (requires JWT)  
+**Response:**
+
+```json
+{
+  "users": [
+    {
+      "_id": "user_id",
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ]
+}
+```
+
+---
+
+### **Teams**
+
+#### **POST /teams**
+
+Create a new team  
+**Request Body:**
+
+```json
+{
+  "name": "Frontend Team",
+  "description": "Handles UI/UX"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Team created successfully",
+  "team": {}
+}
+```
+
+#### **GET /teams**
+
+List all teams  
+**Response:**
+
+```json
+{
+  "teams": [
+    {
+      "_id": "team_id",
+      "name": "Frontend Team",
+      "description": "Handles UI/UX"
+    }
+  ]
+}
+```
+
+---
+
+### **Projects**
+
+#### **POST /projects**
+
+Create a new project  
+**Request Body:**
+
+```json
+{
+  "name": "Website Redesign",
+  "description": "Revamp the company website"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Project created successfully.",
+  "project": {}
+}
+```
+
+#### **GET /projects**
+
+List all projects  
+**Response:**
+
+```json
+{
+  "message": "Projects fetched successfully.",
+  "projects": []
+}
+```
+
+---
+
+### **Tags**
+
+#### **POST /tags**
+
+Create a new tag  
+**Request Body:**
+
+```json
+{
+  "name": "Urgent"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Tag created successfully.",
+  "tag": {}
+}
+```
+
+#### **GET /tags**
+
+List all tags  
+**Response:**
+
+```json
+{
+  "message": "Tags fetched successfully.",
+  "tags": []
+}
+```
+
+---
+
+### **Tasks**
+
+#### **POST /tasks**
+
+Create a new task  
+**Request Body:**
+
+```json
+{
+  "name": "Design Homepage",
+  "project": "project_id",
+  "team": "team_id",
+  "owners": ["user_id1", "user_id2"],
+  "tags": ["UI", "Urgent"],
+  "status": "To Do",
+  "timeToComplete": 3
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Task created successfully",
+  "task": {}
+}
+```
+
+#### **GET /tasks**
+
+List tasks (supports filtering by tags, status, owners, project, team)  
+**Response:**
+
+```json
+[
+  {
+    "_id": "task_id",
+    "name": "Design Homepage",
+    "status": "To Do",
+    "dueDate": "2025-06-14T12:00:00.000Z"
+  }
+]
+```
+
+#### **POST /tasks/:id**
+
+Update a task  
+**Request Body:** (fields to update)
+
+```json
+{
+  "status": "Completed"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Task updated successfully",
+  "task": {}
+}
+```
+
+#### **DELETE /tasks/:id**
+
+Delete a task  
+**Response:**
+
+```json
+{
+  "message": "Task deleted successfully",
+  "task": {}
+}
+```
+
+---
+
+### **Reports**
+
+#### **GET /report/last-week**
+
+Get tasks completed in the last week  
+**Response:**
+
+```json
+{
+  "message": "Tasks completed in the last week.",
+  "data": []
+}
+```
+
+#### **GET /report/pending**
+
+Get total pending work in days  
+**Response:**
+
+```json
+{
+  "message": "Total pending work in days.",
+  "data": { "totalPendingDays": 5 }
+}
+```
+
+#### **GET /report/closed-tasks?groupBy=team|owners|project**
+
+Get closed tasks grouped by team, owners, or project  
+**Response:**
+
+```json
+{
+  "message": "Tasks closed by each team.",
+  "data": []
+}
+```
+
+---
+
+## 📬 Contact
+
+For bugs, suggestions, or feature requests, email:  
+**prathameshlakare001@gmail.com**
