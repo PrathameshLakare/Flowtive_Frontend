@@ -13,8 +13,8 @@ Manage tasks, projects, teams, and tags; track progress, generate reports, and s
 
 ## 🛂 Guest Login
 
-- **Username:** `mine@example.com`
-- **Password:** `mine123`
+- **Username:** `useremail`
+- **Password:** `userpassword`
 
 ---
 
@@ -39,7 +39,7 @@ npm start
 ## 🎥 Demo Video
 
 Watch a walkthrough of Flowtive’s features:  
-[Loom Video Link]()
+[Loom Video Link](https://www.youtube.com/watch?v=z7BOao-Qq2Y)
 
 ---
 
